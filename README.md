@@ -1,7 +1,7 @@
 # Kotlin for Python developers
 
 _By [Aasmund Eldhuset](https://eldhuset.net/), Software Engineer at [Khan Academy](https://www.khanacademy.org/). Published on November 29, 2018._  
-_This document is not a part of Khan Academy's official product offering, but rather an internal resource that we're providing "as&nbsp;is" for the benefit of the programming community. If you find any errors, please submit an [issue](https://github.com/Khan/kotlin-for-python-developers/issues) or a [pull request](https://github.com/Khan/kotlin-for-python-developers/pulls)._
+_This document is not a part of Khan Academy's official product offering, but rather an [internal resource](http://engineering.khanacademy.org/posts/kotlin-for-python-developers.htm) that we're providing "as&nbsp;is" for the benefit of the programming community. If you find any errors, please submit an [issue](https://github.com/Khan/kotlin-for-python-developers/issues) or a [pull request](https://github.com/Khan/kotlin-for-python-developers/pulls)._
 
 ---
 
