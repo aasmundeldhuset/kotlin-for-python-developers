@@ -119,7 +119,13 @@ fun main(args: Array<String>) {
 }
 ```
 
-Only imports and declarations can exist at the top level of a Kotlin file. Therefore, "running" an individual file only makes sense if it contains an _entry point_, which must be a function called `main` with one argument called `args` of the type "array of strings" (which will contain the command-line arguments that the program is invoked with, similarly to `sys.argv` in Python - but you need to declare it even if you're not planning on using it).
+Only imports and declarations can exist at the top level of a Kotlin file. Therefore, "running" an individual file only makes sense if it contains an _entry point_, which must be a function called `main` with one argument called `args` of the type "array of strings". `args` will contain the command-line arguments that the program is invoked with, similarly to `sys.argv` in Python; it can be omitted if your program does not need to accept command-line arguments and you are using Kotlin 1.3:
+
+```kotlin
+fun main() {
+    println("Hello World!")
+}
+```
 
 The function body is delimited by curly braces - indentation is generally not significant in Kotlin, but you should of course indent your code properly for the benefit of human readers.
 
