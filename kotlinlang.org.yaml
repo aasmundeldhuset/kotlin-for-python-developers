@@ -1,0 +1,100 @@
+- md: 00-introduction.md
+  url: introduction.html
+  title: "Introduction"
+
+- md: 01-hello-world.md
+  url: hello-world.html
+  title: "Hello World"
+
+- md: 02-compiling-and-running.md
+  url: compiling-and-running.html
+  title: "Compiling and running"
+
+- md: 03-declaring-variables.md
+  url: declaring-variables.html
+  title: "Declaring variables"
+
+- md: 04-primitive-data-types-and-their-limitations.md
+  url: primitive-data-types-and-their-limitations.html
+  title: "Primitive data types and their limitations"
+
+- md: 05-strings.md
+  url: strings.html
+  title: "Strings"
+
+- md: 06-conditionals.md
+  url: conditionals.html
+  title: "Conditionals"
+
+- md: 07-collections.md
+  url: collections.html
+  title: "Collections"
+
+- md: 08-loops.md
+  url: loops.html
+  title: "Loops"
+
+- md: 09-functions.md
+  url: functions.html
+  title: "Functions"
+
+- md: 10-classes.md
+  url: classes.html
+  title: "Classes"
+
+- md: 11-exceptions.md
+  url: exceptions.html
+  title: "Exceptions"
+
+- md: 12-null-safety.md
+  url: null-safety.html
+  title: "Null safety"
+
+- md: 13-functional-programming.md
+  url: functional-programming.html
+  title: "Functional programming"
+
+- md: 14-packages-and-imports.md
+  url: packages-and-imports.html
+  title: "Packages and imports"
+
+- md: 15-visibility-modifiers.md
+  url: visibility-modifiers.html
+  title: "Visibility modifiers"
+
+- md: 16-inheritance.md
+  url: inheritance.html
+  title: "Inheritance"
+
+- md: 17-objects-and-companion-objects.md
+  url: objects-and-companion-objects.html
+  title: "Objects and companion objects"
+
+- md: 18-generics.md
+  url: generics.html
+  title: "Generics"
+
+- md: 19-extension-functionsproperties.md
+  url: extension-functionsproperties.html
+  title: "Extension functions/properties"
+
+- md: 20-member-references-and-reflection.md
+  url: member-references-and-reflection.html
+  title: "Member references and reflection"
+
+- md: 21-annotations.md
+  url: annotations.html
+  title: "Annotations"
+
+- md: 22-file-io.md
+  url: file-io.html
+  title: "File I/O"
+
+- md: 23-scoped-resource-usage.md
+  url: scoped-resource-usage.html
+  title: "Scoped resource usage"
+
+- md: 24-documentation.md
+  url: documentation.html
+  title: "Documentation"
+

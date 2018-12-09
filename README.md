@@ -1590,7 +1590,7 @@ We're allowed to pass a `Car` to `boast()` because `Car` is a subclass of `Motor
 With collections and functions, polymorphism becomes more complicated - see the section on [generics](#generics).
 
 
-[//]: TODO: Overload resolution rules
+[//]: TODO (Overload resolution rules)
 
 
 ### Casting and type testing
