@@ -40,3 +40,8 @@ If you want to write strings gradually, you need to create an `OutputStreamWrite
 If you need a fancier way of reading or writing file data, you have access to  the full Java suite of I/O classes - in particular, `Scanner`, which can parse numbers and other data types from files or other streams, and `BufferedReader` (which is good for efficient reading of large amounts of data), which you can obtain by calling `bufferedReader()` on a file or stream. See any Java tutorial for how to use these.
 
 
+
+
+---
+
+[← Previous: Annotations](annotations.html) | [Next: Scoped resource usage →](scoped-resource-usage.html)

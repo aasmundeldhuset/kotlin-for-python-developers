@@ -70,3 +70,8 @@ y.importantFunction()
 The above could also be a oneliner - and note that the compiler knows that because the `throw` will prevent `y` from coming into existence if `x` is null, `y` must be non-null if we reach the line below. Contrast this with `x?.importantFunction()`, which is a no-op if `x` is null.
 
 
+
+
+---
+
+[← Previous: Exceptions](exceptions.html) | [Next: Functional programming →](functional-programming.html)

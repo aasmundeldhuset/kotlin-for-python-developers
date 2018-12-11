@@ -18,3 +18,8 @@ java -jar program.jar
 ```
 
 
+
+
+---
+
+[← Previous: Hello World](hello-world.html) | [Next: Declaring variables →](declaring-variables.html)

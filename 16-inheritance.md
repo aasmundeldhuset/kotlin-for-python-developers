@@ -293,3 +293,8 @@ val name: String? by lazy {
 If you want to restrict the set of subclasses of a base class, you can declare the base class to be `sealed` (which also makes it abstract), in which case you can only declare subclasses in the same file. The compiler then knows the complete set of possible subclasses, which will let you do exhaustive `when` expression for all the possible subtypes without the need for an `else` clause (and if you add another subclass in the future and forget to update the `when`, the compiler will let you know).
 
 
+
+
+---
+
+[← Previous: Visibility modifiers](visibility-modifiers.html) | [Next: Objects and companion objects →](objects-and-companion-objects.html)

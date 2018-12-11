@@ -34,6 +34,8 @@ with open("README.md") as f:
                 seen_preamble = True
                 current_section = []
                 sections.append(("Introduction", "introduction", current_section))
+        elif line == "---\n":
+            break
         elif line.startswith("## "):
             title = line[3:-1]
             if title == "Contents":
@@ -56,8 +58,14 @@ with open("kotlinlang.org.yaml", "w") as yaml:
     for i, (title, slug, section) in enumerate(sections):
         filename = "{0:02}-{1}.md".format(i, slug)
         yaml.write("- md: {0}\n  url: {1}.html\n  title: \"{2}\"\n\n".format(filename, slug, title))
-        for i, line in enumerate(section):
-            section[i] = link_regex.sub(substitute_link, line)
+        for j, line in enumerate(section):
+            section[j] = link_regex.sub(substitute_link, line)
+        navigation = []
+        if i > 0:
+            navigation.append(u"[\u2190 Previous: {0}]({1}.html)".format(*sections[i - 1][0:2]))
+        if i < len(sections) - 1:
+            navigation.append(u"[Next: {0} \u2192]({1}.html)".format(*sections[i + 1][0:2]))
+        section.append(u"\n\n---\n\n{0}\n".format(" | ".join(navigation)))
         with open(filename, "w") as md:
             md.write(copyright_notice)
-            md.write("".join(section))
+            md.write(u"".join(s for s in section).encode("utf-8"))

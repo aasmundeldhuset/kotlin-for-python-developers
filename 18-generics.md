@@ -252,3 +252,8 @@ fun <T : DbModel> loadFromDb(cls: KClass<T>, id: String): T {
 Now, you can say `loadFromDb<Exercise>("x01234567")` to load an object from the `Exercise` database table.
 
 
+
+
+---
+
+[← Previous: Objects and companion objects](objects-and-companion-objects.html) | [Next: Extension functions/properties →](extension-functionsproperties.html)

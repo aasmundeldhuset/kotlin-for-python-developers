@@ -324,3 +324,8 @@ val result = someExpression.takeIf { it >= 42 } ?.let { it * it }
 ```
 
 
+
+
+---
+
+[← Previous: Null safety](null-safety.html) | [Next: Packages and imports →](packages-and-imports.html)

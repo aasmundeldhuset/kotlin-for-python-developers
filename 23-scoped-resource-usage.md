@@ -19,3 +19,8 @@ Thus, you can create something resource manager-like by creating a class that im
 In case you're wondering about how `use`, which is a function, can just be followed by a block like that, see the section on [DSL support](functional-programming.html#receivers).
 
 
+
+
+---
+
+[← Previous: File I/O](file-io.html) | [Next: Documentation →](documentation.html)

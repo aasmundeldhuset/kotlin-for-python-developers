@@ -49,3 +49,8 @@ Note that exceptions are somewhat discouraged in Kotlin except when interacting 
 The nullable version `Nothing?` will be used by the compiler when something is initialized with null and there is no other type information. In `val x = null`, the type of `x` will be `Nothing?`. This type does not have the "never returns normally" semantics; instead, the compiler knows that the value will always be null.
 
 
+
+
+---
+
+[← Previous: Classes](classes.html) | [Next: Null safety →](null-safety.html)

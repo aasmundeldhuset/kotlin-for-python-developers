@@ -71,3 +71,8 @@ Type | Bits | Notes
 Floating-point numbers act similarly to in Python, but they come in two types, depending on how many digits you need. If you need larger precision, or to work with monetary amounts (or other situations where you must have exact results), use the non-primitive type `BigDecimal`.
 
 
+
+
+---
+
+[← Previous: Declaring variables](declaring-variables.html) | [Next: Strings →](strings.html)

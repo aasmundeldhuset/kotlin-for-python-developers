@@ -54,11 +54,11 @@ import content.exercises.Exercise as Ex
 
 In Kotlin, importing is a compile-time concept - importing something does not actually cause any code to run (unlike Python, where all top-level statements in a file are executed at import time). Therefore, circular imports are allowed, but they might suggest a design problem in your code. However, during execution, a class will be loaded the first time it (or any of its properties or functions) is referenced, and class loading causes [companion objects](objects-and-companion-objects.html#companion-objects) to be initialized - this can lead to runtime exceptions if you have circular dependencies.
 
-You only need to import a symbol if you want to reference it directly - you do not need to import symbols that you reach via a chain of property lookups or collection lookups. For example, if the class `Exercise` has got a property `questions: List<Question>`, and `Question` has got a property `title: String`, you can do the following by importing only `Exercise`:
-
-```kotlin
-fun 
-
 Every file implicitly imports its own package and a number of built-in Kotlin and Java packages.
 
 
+
+
+---
+
+[← Previous: Functional programming](functional-programming.html) | [Next: Visibility modifiers →](visibility-modifiers.html)

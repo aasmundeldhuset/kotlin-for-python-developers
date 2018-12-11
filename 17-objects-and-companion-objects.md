@@ -88,3 +88,8 @@ In spite of the `object` keyword being used, a new instance of the anonymous cla
 The body of an object expression may access, and possibly modify, the local variables of the containing scope.
 
 
+
+
+---
+
+[← Previous: Inheritance](inheritance.html) | [Next: Generics →](generics.html)

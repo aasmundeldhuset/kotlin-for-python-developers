@@ -22,6 +22,8 @@ Unlike docstrings, KDoc blocks are not available to the program at runtime.
 
 You can generate separate documentation files in HTML format from KDoc by using a tool called [Dokka](https://github.com/Kotlin/dokka/blob/master/README.md).
 
+
+
 ---
 
-_This material was written by [Aasmund Eldhuset](https://eldhuset.net/); it is owned by [Khan Academy](https://www.khanacademy.org/) and licensed for use under [CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/)._
+[← Previous: Scoped resource usage](scoped-resource-usage.html)

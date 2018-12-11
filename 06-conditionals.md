@@ -60,3 +60,8 @@ when (x) {
 ```
 
 
+
+
+---
+
+[← Previous: Strings](strings.html) | [Next: Collections →](collections.html)

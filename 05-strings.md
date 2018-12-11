@@ -30,3 +30,8 @@ If you want a literal `$`, you need to escape it: `\$`. Escaping generally works
 
 
 
+
+
+---
+
+[← Previous: Primitive data types and their limitations](primitive-data-types-and-their-limitations.html) | [Next: Conditionals →](conditionals.html)

@@ -128,3 +128,8 @@ If you don't have an instance of the class, you can get the class metadata with 
 If you need to look up the class dynamically as well, you can use `Class.forName()` and supply the fully-qualified name of the class.
 
 
+
+
+---
+
+[← Previous: Extension functions/properties](extension-functionsproperties.html) | [Next: Annotations →](annotations.html)

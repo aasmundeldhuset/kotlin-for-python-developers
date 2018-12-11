@@ -37,3 +37,8 @@ The type of a property, and the types that are used for the parameters and the r
 The visibility level only affects the _lexical visibility_ of the _symbol_ - i.e., where the compiler allows you to type out the symbol. It does not affect where _instances_ are used: for example, a public top-level function may well return an instance of a private class, as long as the return type doesn't mention the private class name but is instead a public base class of the private class (possibly `Any`) or a public interface that the private class implements. When you [subclass](inheritance.html#subclassing) a class, its private members are also inherited by the subclass, but are not directly accessible there - however, if you call an inherited public function that happens to access a private member, that's fine.
 
 
+
+
+---
+
+[← Previous: Packages and imports](packages-and-imports.html) | [Next: Inheritance →](inheritance.html)

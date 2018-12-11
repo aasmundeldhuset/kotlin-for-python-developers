@@ -100,3 +100,8 @@ Kotlin has inherited Java's fidgety array system, so primitive types have got th
 However, you can't spread a map into a function call and expect the values in the map to be passed to the parameters named by the keys - the names of the parameters must be known at compile time. If you need runtime-defined parameter names, your function must either take a map or take `vararg kwargs: Pair<String, X>` (where `X` is the "lowest common denominator" of the parameter types, in the worst case `Any?` - be prepared to have to typecast the parameter values, and note that you'll lose type safety). You can call such a function like this: `foo("bar" to 42, "test" to "hello")`, since `to` is an [infix function](classes.html#infix-functions) that creates a `Pair`.
 
 
+
+
+---
+
+[← Previous: Loops](loops.html) | [Next: Classes →](classes.html)

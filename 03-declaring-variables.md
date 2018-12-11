@@ -74,3 +74,8 @@ Variable names should use `lowerCamelCase` instead of `snake_case`.
 In general, identifiers may consist of letters, digits, and underscores, and may not begin with a digit. However, if you are writing code that e.g. autogenerates JSON based on identifiers and you want the JSON key to be a string that does not conform to these rules or that collides with a keyword, you can enclose it in backticks: `` `I can't believe this is not an error!` `` is a valid identifier.
 
 
+
+
+---
+
+[← Previous: Compiling and running](compiling-and-running.html) | [Next: Primitive data types and their limitations →](primitive-data-types-and-their-limitations.html)

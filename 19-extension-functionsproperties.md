@@ -39,3 +39,8 @@ val x = foo(Car())
 There are a lot of built-in extension functions/properties in Kotlin - for example, `map()`, `filter()`, and the rest of the framework for processing collections in a functional manner is built using extension functions.
 
 
+
+
+---
+
+[← Previous: Generics](generics.html) | [Next: Member references and reflection →](member-references-and-reflection.html)
