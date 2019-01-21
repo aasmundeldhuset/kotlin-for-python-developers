@@ -1140,7 +1140,7 @@ corresponds to
 
 ```kotlin
 short_greetings = [
-    "Hello, %s!" % p.name
+    f"Hello, {p.name}"
     for p in people
     if len(p.name) < 10
 ]
