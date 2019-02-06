@@ -60,7 +60,7 @@ for ((index, value) in names.withIndex()) {
 The `while` loop is similar to Python (but keep in mind that the condition must be an actual boolean expression, as there's no concept of truthy or falsy values).
 
 ```kotlin
-val x = 0
+var x = 0
 while (x < 10) {
     println(x)
     x++ // Same as x += 1
