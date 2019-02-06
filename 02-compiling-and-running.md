@@ -7,13 +7,13 @@ The author strongly recommends that you use an IDE with Kotlin support, as the s
 
 If you insist on using a plain editor and the command line, see [these instructions instead](https://kotlinlang.org/docs/tutorials/command-line.html). In short, you need to _compile_ your Kotlin code before running it. Assuming that your Kotlin file is called `program.kt`:
 
-```kotlin
+```bash
 kotlinc program.kt -include-runtime -d program.jar
 ```
 
 By default, Kotlin compiles down to Java (so you have the entire Java Standard Library available to you, and interacting with Java libraries is a breeze), so you now have a Java Archive (`program.jar`) which includes the Java libraries that are necessary to support the Kotlin features (thanks to `-include-runtime`), and you can run it using an out-of-the-box Java runtime:
 
-```kotlin
+```bash
 java -jar program.jar
 ```
 

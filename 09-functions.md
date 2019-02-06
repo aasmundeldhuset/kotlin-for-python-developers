@@ -70,7 +70,7 @@ fun countAndPrintArgs(vararg numbers: Int) {
 }
 ```
 
-There are no `**kwargs` in Kotlin, but you can define optional parameters with default values, and you may choose to name some or all of the parameters when you call the function (whether they've got default values or not). Like in Python, the named arguments can be reordered at will:
+There are no `**kwargs` in Kotlin, but you can define optional parameters with default values, and you may choose to name some or all of the parameters when you call the function (whether they've got default values or not). A parameter with a default value must still specify its type explicitly. Like in Python, the named arguments can be reordered at will at the call site:
 
 ```kotlin
 fun foo(decimal: Double, integer: Int, text: String = "Hello") { ... }
@@ -79,7 +79,16 @@ foo(3.14, text = "Bye", integer = 42)
 foo(integer = 12, decimal = 3.4)
 ```
 
-Unlike in Python, the expressions for the default values are evaluated at function invocation time, not at function definition time, which means that this classic Python trap is safe in Kotlin - every invocation will see a new, empty list:
+
+In Python, the expression for a default value is evaluated once, at function definition time. That leads to this classic trap, where the developer hopes to get a new, empty list every time the function is called without a value for `numbers`, but instead, the same list is being used every time:
+
+```python
+def tricky(x, numbers=[]):  # Bug: every call will see the same list!
+    numbers.append(x)
+    print numbers
+```
+
+In Kotlin, the expression for a default value is evaluated every time the function is invoked. Therefore, you will avoid the above trap as long as you use an expression that produces a new list every time it is evaluated:
 
 ```kotlin
 fun tricky(x: Int, numbers: MutableList<Int> = mutableListOf()) {
@@ -87,6 +96,8 @@ fun tricky(x: Int, numbers: MutableList<Int> = mutableListOf()) {
     println(numbers)
 }
 ```
+
+For this reason, you should probably not use a function with side effects as a default value initializer, as the side effects will happen on every call. If you just reference a variable instead of calling a function, the same variable will be read every time the function is invoked: `numbers: MutableList<Int> = myMutableList`. If the variable is immutable, each call will see the same value (but if the value itself is mutable, it might change between calls), and if the variable is mutable, each call will see the current value of the variable. Needless to say, these situations easily lead to confusion, so a default value initializer should be either a constant or a function call that always produces a new object with the same value.
 
 You can call a variadic function with one array (but not a list or any other iterable) that contains all the variadic arguments, by _spreading_ it with the `*` operator (same syntax as Python):
 

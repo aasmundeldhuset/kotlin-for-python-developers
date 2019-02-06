@@ -110,9 +110,9 @@ val shortGreetings = people
 
 corresponds to
 
-```kotlin
+```python
 short_greetings = [
-    "Hello, %s!" % p.name
+    f"Hello, {p.name}"  # In Python 2, this would be: "Hello, %s!" % p.name
     for p in people
     if len(p.name) < 10
 ]
@@ -182,7 +182,7 @@ The block after `tree("root")` is the first function literal with receiver, whic
 
 If we had wanted to express the same thing in Python, it would have looked like this, and we would be hamstrung by the fact that lambda functions can only contain one expression, so we need explicit function definitions for everything but the oneliners:
 
-```kotlin
+```python
 class TreeNode:
     def __init__(self, name):
         self.name = name

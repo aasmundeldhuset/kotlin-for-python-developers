@@ -8,7 +8,7 @@ _This material was written by [Aasmund Eldhuset](https://eldhuset.net/); it is o
 `if`/`else` works the same way as in Python, but it's `else if` instead of `elif`, the conditions are enclosed in parentheses, and the bodies are enclosed in curly braces:
 
 ```kotlin
-int age = 42
+val age = 42
 if (age < 10) {
     println("You're too young to watch this movie")
 } else if (age < 13) {
