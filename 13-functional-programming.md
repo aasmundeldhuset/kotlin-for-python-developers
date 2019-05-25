@@ -9,7 +9,7 @@ Like in Python, functions in Kotlin are first-class values - they can be assigne
 
 ```kotlin
 fun safeDivide(numerator: Int, denominator: Int) =
-    if (denominator == 0.0) 0.0 else numerator.toDouble() / denominator
+    if (denominator == 0) 0.0 else numerator.toDouble() / denominator
 ```
 
 It takes two `Int` parameters and returns a `Double`, so its type is `(Int, Int) -> Double`. We can reference the function itself by prefixing its name with `::`, and we can assign it to a variable (whose type would normally be inferred, but we show the type signature for demonstration):
@@ -21,7 +21,7 @@ val f: (Int, Int) -> Double = ::safeDivide
 When you have a variable or parameter of function type (sometimes called a _function reference_), you can call it as if it were an ordinary function, and that will cause the referenced function to be called:
 
 ```kotlin
-val quotient = f(3.14, 0.0)
+val quotient = f(3, 0)
 ```
 
 It is possible for a class to implement a function type as if it were an interface. It must then supply an operator function called `invoke` with the given signature, and instances of that class may then be assigned to a variable of that function type:
@@ -39,7 +39,7 @@ Like in Python, you can write _lambda expressions_: unnamed function declaration
 
 ```kotlin
 val safeDivide = { numerator: Int, denominator: Int ->
-    if (denominator == 0.0) 0.0 else numerator.toDouble() / denominator
+    if (denominator == 0) 0.0 else numerator.toDouble() / denominator
 }
 ```
 
