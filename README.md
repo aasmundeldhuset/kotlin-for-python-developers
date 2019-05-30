@@ -331,7 +331,7 @@ Floating-point numbers act similarly to in Python, but they come in two types, d
 
 Unicode correctness can be onerous in Python 2, since the "default" string type `str` is really just a byte array, while `unicode` is actually a sequence of _code units_ (see below) - and whether the code units are 16 or 32 bits wide depends on how your Python distribution was built. In Kotlin, there's no such confusion: `String`, which is what you get when you make a string literal (which you can only do with double quotes), is an immutable sequence of UTF-16 code units. `ByteArray` is a fixed-size (but otherwise mutable) byte array (and `String` can specifically _not_ be used as a byte array).
 
-A UTF-16 _code unit_ is a 16-byte unsigned integral value that represents either one Unicode _code point_ (character code) or must be combined with another code unit to form a code unit. If this makes no sense, I strongly recommend [Joel Spolsky's excellent essay on Unicode and its encodings](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/). For most Western scripts, including English, all code points fit inside one code unit, so it's tempting to think of a code unit as a character - but that will lead astray once your code encounters non-Western scripts. A single UTF-16 code unit can be represented with single quotes, and has the type `Char`:
+A UTF-16 _code unit_ is a 16-bit unsigned integral value that represents either one Unicode _code point_ (character code) or must be combined with another code unit to form a code unit. If this makes no sense, I strongly recommend [Joel Spolsky's excellent essay on Unicode and its encodings](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/). For most Western scripts, including English, all code points fit inside one code unit, so it's tempting to think of a code unit as a character - but that will lead astray once your code encounters non-Western scripts. A single UTF-16 code unit can be represented with single quotes, and has the type `Char`:
 
 ```kotlin
 val c = 'x' // Char
@@ -1048,7 +1048,7 @@ Like in Python, functions in Kotlin are first-class values - they can be assigne
 
 ```kotlin
 fun safeDivide(numerator: Int, denominator: Int) =
-    if (denominator == 0.0) 0.0 else numerator.toDouble() / denominator
+    if (denominator == 0) 0.0 else numerator.toDouble() / denominator
 ```
 
 It takes two `Int` parameters and returns a `Double`, so its type is `(Int, Int) -> Double`. We can reference the function itself by prefixing its name with `::`, and we can assign it to a variable (whose type would normally be inferred, but we show the type signature for demonstration):
@@ -1060,7 +1060,7 @@ val f: (Int, Int) -> Double = ::safeDivide
 When you have a variable or parameter of function type (sometimes called a _function reference_), you can call it as if it were an ordinary function, and that will cause the referenced function to be called:
 
 ```kotlin
-val quotient = f(3.14, 0.0)
+val quotient = f(3, 0)
 ```
 
 It is possible for a class to implement a function type as if it were an interface. It must then supply an operator function called `invoke` with the given signature, and instances of that class may then be assigned to a variable of that function type:
@@ -1078,7 +1078,7 @@ Like in Python, you can write _lambda expressions_: unnamed function declaration
 
 ```kotlin
 val safeDivide = { numerator: Int, denominator: Int ->
-    if (denominator == 0.0) 0.0 else numerator.toDouble() / denominator
+    if (denominator == 0) 0.0 else numerator.toDouble() / denominator
 }
 ```
 
