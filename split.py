@@ -12,7 +12,8 @@ copyright_notice = (
     "_This material was written by [Aasmund Eldhuset](https://eldhuset.net/); "
     "it is owned by [Khan Academy](https://www.khanacademy.org/) and is licensed for use under "
     "[CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/). "
-    "Please note that this is not a part of Khan Academy's official product offering._\n\n---\n\n\n")
+    "Please note that this is not a part of Khan Academy's official product offering._")
+copyright_notice_separator = "\n\n---\n\n"
 
 def substitute_link(match):
     link = match.group(1)
@@ -67,5 +68,10 @@ with open("kotlinlang.org.yaml", "w") as yaml:
             navigation.append(u"[Next: {0} \u2192]({1}.html)".format(*sections[i + 1][0:2]))
         section.append(u"\n\n---\n\n{0}\n".format(" | ".join(navigation)))
         with open(filename, "w") as md:
-            md.write(copyright_notice)
+            if i == 0:
+                md.write(copyright_notice)
+                md.write(copyright_notice_separator)
             md.write(u"".join(s for s in section).encode("utf-8"))
+            if i != 0:
+                md.write(copyright_notice_separator)
+                md.write(copyright_notice)

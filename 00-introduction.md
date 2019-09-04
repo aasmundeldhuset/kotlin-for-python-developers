@@ -2,7 +2,6 @@ _This material was written by [Aasmund Eldhuset](https://eldhuset.net/); it is o
 
 ---
 
-
 Kotlin is a compiled, statically typed language, which might provide some initial hurdles for people who are used to the interpreted, dynamically typed Python. This document aims to explain a substantial portion of Kotlin's syntax and concepts in terms of how they compare to corresponding concepts in Python.
 
 Kotlin can be compiled for several different platforms. In this document, we assume that the target platform is the Java virtual machine, which grants some extra capabilities - in particular, your code will be compiled to Java bytecode and will therefore be interoperable with the large ecosystem of Java libraries.

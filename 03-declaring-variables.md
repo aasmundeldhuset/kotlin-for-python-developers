@@ -1,8 +1,3 @@
-_This material was written by [Aasmund Eldhuset](https://eldhuset.net/); it is owned by [Khan Academy](https://www.khanacademy.org/) and is licensed for use under [CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/). Please note that this is not a part of Khan Academy's official product offering._
-
----
-
-
 Every variable must be _declared_. Any attempt to use a variable that hasn't been declared yet is a syntax error; thus, you are protected from accidentally assigning to a misspelled variable. The declaration also decides what kind of data you are allowed to store in the variable.
 
 Local variables are typically declared and initialized at the same time, in which case the type of the variable is _inferred_ to be the type of the expression you initialize it with:
@@ -79,3 +74,8 @@ In general, identifiers may consist of letters, digits, and underscores, and may
 ---
 
 [← Previous: Compiling and running](compiling-and-running.html) | [Next: Primitive data types and their limitations →](primitive-data-types-and-their-limitations.html)
+
+
+---
+
+_This material was written by [Aasmund Eldhuset](https://eldhuset.net/); it is owned by [Khan Academy](https://www.khanacademy.org/) and is licensed for use under [CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/). Please note that this is not a part of Khan Academy's official product offering._
