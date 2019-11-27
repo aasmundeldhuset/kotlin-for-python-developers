@@ -41,11 +41,35 @@ Any of the expressions to the right of `in` in the loops above can also be used 
 val numbers = (0..9).toList()
 ```
 
-If you need to know the index of the current element when you're iterating through something, you can use `withIndex()`, which corresponds to `enumerate()`. It produces a sequence of objects that have got two properties (the index and the value) and two specially-named accessor functions called `component1()` and `component2()`; Kotlin lets you destructure such an object into a declaration:
+If you need to know the index of the current element when you're iterating over something, you can use `withIndex()`, which corresponds to `enumerate()`. It produces a sequence of objects that have got two properties (the index and the value) and two specially-named accessor functions called `component1()` and `component2()`; Kotlin lets you destructure such an object into a declaration:
 
 ```kotlin
 for ((index, value) in names.withIndex()) {
     println("$index: $value")
+}
+```
+
+You can iterate over a map in several different ways, depending on whether you want the keys, the values, or both:
+
+```kotlin
+// Iterate over the entries as objects that contain the key and the value as properties
+for (entry in map) {
+    println("${entry.key}: ${entry.value}")
+}
+
+// Iterate over the entries as separate key and value objects
+for ((key, value) in map) {
+    println("$key: $value")
+}
+
+// Iterate over the keys
+for (key in map.keys) {
+    println(key)
+}
+
+// Iterate over the values
+for (value in map.values) {
+    println(values)
 }
 ```
 
