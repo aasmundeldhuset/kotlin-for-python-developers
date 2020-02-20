@@ -523,7 +523,7 @@ for (key in map.keys) {
 
 // Iterate over the values
 for (value in map.values) {
-    println(values)
+    println(value)
 }
 ```
 
