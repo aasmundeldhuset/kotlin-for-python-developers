@@ -1778,7 +1778,7 @@ If you want to restrict the set of subclasses of a base class, you can declare t
 
 ### Object declarations
 
-If you need a _singleton_ - a class that only has got one instance - you can declare the class in the usual way, but use the `object` keyword instead of `class`:
+If you need a _singleton_ - a class where only one instance exists - you can declare the class in the usual way, but use the `object` keyword instead of `class`:
 
 ```kotlin
 object CarFactory {
@@ -1792,7 +1792,7 @@ object CarFactory {
 }
 ```
 
-There will only ever be one instance of this class, and the instance (which is created the first time it is accessed, in a thread-safe manner) has got the same name as the class:
+There will only ever be one instance of this class, and the instance (which is created the first time it is accessed, in a thread-safe manner) will have the same name as the class itself:
 
 ```kotlin
 val car = CarFactory.makeCar(150)
