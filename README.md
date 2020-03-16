@@ -425,7 +425,16 @@ val strings = listOf("Anne", "Karen", "Peter") // List<String>
 val map = mapOf("a" to 1, "b" to 2, "c" to 3)  // Map<String, Int>
 val set = setOf("a", "b", "c")                 // Set<String>
 ```
-
+much more similar syntax to python would be:
+```kotlin
+var a = listOf("a", 2, 3.5)
+```
+In the above example, we can see that Kotlin created a dynamic datatype list(Any in Kotlin) just like python which can also be done by defining the datatype:
+```kotlin
+var a: List<Int> = listOf(1,2,3)
+var a: List<String> = listOf("a", "b", "c")
+var a: List<Any> = listOf("a", 2, 3.5)
+```
 (Note that `to` is an [infix function](#infix-functions) that creates a `Pair` containing a key and a value, from which the map is constructed.) The resulting collections are immutable - you can neither change their size nor replace their elements - however, the elements themselves may still be mutable objects. For mutable collections, do this:
 
 ```kotlin
@@ -464,6 +473,16 @@ for (name in names) {
 ```
 
 Note that a `for` loop always implicitly declares a new read-only variable (in this example, `name`) - if the outer scope already contains a variable with the same name, it will be shadowed by the unrelated loop variable. For the same reason, the final value of the loop variable is not accessible after the loop.
+
+The variable i gets re-initialized with every iteration of the loop and just like python, with every iteration the datatype of the variable can be different
+
+```kotlin
+fun main() {
+    for (i in listOf("a",5,3.6)){
+        println(i::class.simpleName) // Prints the datatype of i
+    }
+}
+```
 
 You can also create a range with the `..` operator - but beware that unlike Python's `range()`, it _includes_ its endpoint:
 
