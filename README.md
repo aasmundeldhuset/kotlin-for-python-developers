@@ -1068,7 +1068,7 @@ The above could also be a oneliner - and note that the compiler knows that becau
 
 ### Function types
 
-Like in Python, functions in Kotlin are first-class values - they can be assigned to variables and passed around as parameters. The type a function is a _function type_, which is indicated with a parenthesized parameter type list and an arrow to the return type. Consider this function:
+Like in Python, functions in Kotlin are first-class values - they can be assigned to variables and passed around as parameters. The type of a function is a _function type_, which is indicated with a parenthesized parameter type list and an arrow to the return type. Consider this function:
 
 ```kotlin
 fun safeDivide(numerator: Int, denominator: Int) =
