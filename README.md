@@ -425,16 +425,7 @@ val strings = listOf("Anne", "Karen", "Peter") // List<String>
 val map = mapOf("a" to 1, "b" to 2, "c" to 3)  // Map<String, Int>
 val set = setOf("a", "b", "c")                 // Set<String>
 ```
-much more similar syntax to python would be:
-```kotlin
-var a = listOf("a", 2, 3.5)
-```
-In the above example, we can see that Kotlin created a dynamic datatype list(Any in Kotlin) just like python which can also be done by defining the datatype:
-```kotlin
-var a: List<Int> = listOf(1,2,3)
-var a: List<String> = listOf("a", "b", "c")
-var a: List<Any> = listOf("a", 2, 3.5)
-```
+
 (Note that `to` is an [infix function](#infix-functions) that creates a `Pair` containing a key and a value, from which the map is constructed.) The resulting collections are immutable - you can neither change their size nor replace their elements - however, the elements themselves may still be mutable objects. For mutable collections, do this:
 
 ```kotlin
@@ -455,7 +446,15 @@ val emptyMap = mapOf<String, Int>()
 
 The types inside the angle brackets are called _generic type parameters_, which we will cover later. In short, it's a useful technique to make a class that is tied to another class (such as a container class, which is tied to its element class) applicable to many different classes.
 
-If you really really need a mixed-type collection, you can use the element type `Any` - but you'll need typecasting to get the elements back to their proper type again, so if what you want is a multiple-value return from a function, please use the per-element-typed `Pair` or `Triple` instead. If you need four or more elements, consider making a [data class](#data-classes) for the return type instead (which you should ideally do for two or three elements as well, especially if it's a public function, since it gives you proper names for the elements) - it's very easy and usually a oneliner.
+Coming from Python, you might be used to creating lists that contain elements of different types. This is discouraged in Kotlin, except when dealing with [polymorphic types](#polymorphism). In many cases, such as when returning multiple values from a function, the differently-typed values represent different kinds of information; it would then be better to create a [data class](#data-classes) with named properties of the appropriate types, or to use the per-element-typed `Pair` or `Triple` instead. However, if you really need to, you can put anything inside `listOf()` and the other collection creation functions. Kotlin will then infer the "lowest common denominator" supertype of the types of the given values, and you'll get a list of that element type. If the values have nothing in common, the element type will be `Any`, or `Any?` if one or more of the values are `null`:
+
+```kotlin
+val mixed = listOf("a", 2, 3.14)               // List<Any>
+val mixedWithNull = listOf("a", 2, 3.14, null) // List<Any?>
+```
+
+If you need a collection with a more general type than the values you are initializing it with, you can specify the type like this: `listOf<Number>(1, 2, 3)`.
+
 
 
 ## Loops
@@ -474,17 +473,15 @@ for (name in names) {
 
 Note that a `for` loop always implicitly declares a new read-only variable (in this example, `name`) - if the outer scope already contains a variable with the same name, it will be shadowed by the unrelated loop variable. For the same reason, the final value of the loop variable is not accessible after the loop.
 
-The variable i gets re-initialized with every iteration of the loop and just like python, with every iteration the datatype of the variable can be different
+In every iteration, the type of the loop variable is the same as the element type of the iterable, even if you are iterating over a mixed-type list. With `for (x in listOf("a", 2, 3.14))`, the type of `x` will always be `Any`, and you'll need to cast it in order to perform any operations that depend on knowing the "real" type. This is one of the reasons that mixed-type lists are usually only useful with [polymorphic types](#polymorphism), where the common supertype defines operations that are applicable to all the subtypes. In the example below, `Number` is a supertype of both `Int` and `Double`; it defines `toDouble()`, which converts the number to a `Double`, which can be multiplied. It would _not_ work to simply write `x * 2`.
 
 ```kotlin
-fun main() {
-    for (i in listOf("a",5,3.6)){
-        println(i::class.simpleName) // Prints the datatype of i
-    }
+for (x in listOf<Number>(2, 3.14)) {
+    println(x.toDouble() * 2)
 }
 ```
 
-You can also create a range with the `..` operator - but beware that unlike Python's `range()`, it _includes_ its endpoint:
+You can create a range with the `..` operator - but beware that unlike Python's `range()`, it _includes_ its endpoint:
 
 ```kotlin
 for (x in 0..10) println(x) // Prints 0 through 10 (inclusive)
