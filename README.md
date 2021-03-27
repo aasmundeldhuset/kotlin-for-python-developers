@@ -286,7 +286,7 @@ val aSmallLong = 3L
 val aShort: Short = 32767
 val anotherShort = 1024.toShort()
 val aByte: Byte = 65
-val anotherByte = -32.toByte()
+val anotherByte = (-32).toByte()
 ```
 
 Beware that dividing an integer by an integer produces an integer (like in Python 2, but unlike Python 3). If you want a floating-point result, at least one of the operands needs to be a floating-point number (and recall that like in most languages, floating-point operations are generally imprecise):
