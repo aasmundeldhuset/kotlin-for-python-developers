@@ -1,7 +1,7 @@
 # Kotlin for Python developers
 
 _By [Aasmund Eldhuset](https://eldhuset.net/), Software Engineer at [Khan Academy](https://www.khanacademy.org/). Published on November 29, 2018._  
-_This document is not a part of Khan Academy's official product offering, but rather an [internal resource](http://engineering.khanacademy.org/posts/kotlin-for-python-developers.htm) that we're providing "as&nbsp;is" for the benefit of the programming community. If you find any errors, please submit an [issue](https://github.com/Khan/kotlin-for-python-developers/issues) or a [pull request](https://github.com/Khan/kotlin-for-python-developers/pulls)._
+_This document is not a part of Khan Academy's official product offering, but rather an [internal resource](https://blog.khanacademy.org/kotlin-for-python-developers/) that we're providing "as&nbsp;is" for the benefit of the programming community. If you find any errors, please submit an [issue](https://github.com/Khan/kotlin-for-python-developers/issues) or a [pull request](https://github.com/Khan/kotlin-for-python-developers/pulls)._
 
 ---
 
@@ -9,7 +9,7 @@ Kotlin is a compiled, statically typed language, which might provide some initia
 
 Kotlin can be compiled for several different platforms. In this document, we assume that the target platform is the Java virtual machine, which grants some extra capabilities - in particular, your code will be compiled to Java bytecode and will therefore be interoperable with the large ecosystem of Java libraries.
 
-Even if you don't know Python, this document should hopefully be a useful introduction to Kotlin, in particular if you are used to other dynamically typed languages. However, if you're coming from a Java background, you're probably better off diving directly into the excellent [official docs](https://kotlinlang.org/docs/reference/) (from which this doc has drawn a lot of inspiration). To some extent, you can try to write Java code and look stuff up whenever what you're trying to do doesn't work - and some IDEs can even automatically convert Java code to Kotlin.
+Even if you don't know Python, this document should hopefully be a useful introduction to Kotlin, in particular if you are used to other dynamically typed languages. However, if you're coming from a Java background, you're probably better off diving directly into the excellent [official docs](https://kotlinlang.org/docs/home.html) (from which this doc has drawn a lot of inspiration). To some extent, you can try to write Java code and look stuff up whenever what you're trying to do doesn't work - and some IDEs can even automatically convert Java code to Kotlin.
 
 
 ## Contents
@@ -169,9 +169,9 @@ return    // Empty return statement
 
 ## Compiling and running
 
-The author strongly recommends that you use an IDE with Kotlin support, as the static typing allows an IDE to do reliable navigation and code completion. I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/), which is built by the same company that created Kotlin. The Community Edition is free; see [instructions for getting started](https://kotlinlang.org/docs/tutorials/getting-started.html) (it comes bundled with Kotlin, and you can run your program from the IDE).
+The author strongly recommends that you use an IDE with Kotlin support, as the static typing allows an IDE to do reliable navigation and code completion. I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/), which is built by the same company that created Kotlin. The Community Edition is free; see [instructions for getting started](https://kotlinlang.org/docs/getting-started.html) (it comes bundled with Kotlin, and you can run your program from the IDE).
 
-If you insist on using a plain editor and the command line, see [these instructions instead](https://kotlinlang.org/docs/tutorials/command-line.html). In short, you need to _compile_ your Kotlin code before running it. Assuming that your Kotlin file is called `program.kt`:
+If you insist on using a plain editor and the command line, see [these instructions instead](https://kotlinlang.org/docs/command-line.html). In short, you need to _compile_ your Kotlin code before running it. Assuming that your Kotlin file is called `program.kt`:
 
 ```bash
 kotlinc program.kt -include-runtime -d program.jar
@@ -404,7 +404,7 @@ There are no automatic conversions to boolean and thus no concept of truthy and 
 
 ### `when`
 
-We're not going to cover the [`when` expression](https://kotlinlang.org/docs/reference/control-flow.html#when-expression) in depth here since it doesn't have a close equivalent in Python, but check it out - it's pretty nifty, as it lets you compare one expression against many kinds of expressions in a very compact way (but it's not a full functional-programming-style pattern matcher). For example:
+We're not going to cover the [`when` expression](https://kotlinlang.org/docs/control-flow.html#when-expression) in depth here since it doesn't have a close equivalent in Python, but check it out - it's pretty nifty, as it lets you compare one expression against many kinds of expressions in a very compact way (but it's not a full functional-programming-style pattern matcher). For example:
 
 ```kotlin
 val x = 42
@@ -999,7 +999,7 @@ return try {
 
 The base exception class is `Throwable` (but it is more common to extend its subclass `Exception`), and there are a ton of built-in exception classes. If you don't find one that match your needs, you can create your own by inheriting from an existing exception class.
 
-Note that exceptions are somewhat discouraged in Kotlin except when interacting with Java code. Instead of throwing exceptions in your own code, consider using special return types like [Option](https://arrow-kt.io/docs/datatypes/option/) or [Either](https://arrow-kt.io/docs/datatypes/either/) from the [Arrow library](https://arrow-kt.io/).
+Note that exceptions are somewhat discouraged in Kotlin except when interacting with Java code. Instead of throwing exceptions in your own code, consider using special return types like [Either](https://arrow-kt.io/docs/apidocs/arrow-core-data/arrow.core/-either/) from the [Arrow library](https://arrow-kt.io/).
 
 
 ### Nothing
@@ -1201,7 +1201,7 @@ In some ways, this is easier to read because the operations are specified in the
 
 These transformations can also be applied to `Sequence<T>`, which is similar to Python's generators and allows for lazy evaluation. If you have a huge list and you want to process it lazily, you can call `asSequence()` on it.
 
-There's a vast collection of functional programming-style operations available in the [`kotlin.collections` package](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/index.html).
+There's a vast collection of functional programming-style operations available in the [`kotlin.collections` package](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/).
 
 
 ### Receivers
@@ -1291,7 +1291,7 @@ def init_math(math):
 t = tree("root", init_root)
 ```
 
-The official docs also have a very cool example with a [ DSL for constructing HTML documents](https://kotlinlang.org/docs/reference/type-safe-builders.html).
+The official docs also have a very cool example with a [ DSL for constructing HTML documents](https://kotlinlang.org/docs/type-safe-builders.html).
 
 
 ### Inline functions
