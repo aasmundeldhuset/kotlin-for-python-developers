@@ -404,7 +404,7 @@ There are no automatic conversions to boolean and thus no concept of truthy and 
 
 ### `when`
 
-We're not going to cover the [`when` expression](https://kotlinlang.org/docs/control-flow.html#when-expression) in depth here since it doesn't have a close equivalent in Python, but check it out - it's pretty nifty, as it lets you compare one expression against many kinds of expressions in a very compact way (but it's not a full functional-programming-style pattern matcher). For example:
+The [`when` expression](https://kotlinlang.org/docs/control-flow.html#when-expression) has similarities with pattern matching introduced in Python 3.10. It lets you compare one expression against many kinds of expressions in a very compact way (but it's not a full functional-programming-style pattern matcher). For example:
 
 ```kotlin
 val x = 42
